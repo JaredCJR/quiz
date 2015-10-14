@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     /*
      *Start test consumed time in test case 2!
      */
-     int first = 1;
+    int first = 1;
     for (int i = 0; i < REPEAT_NUM; ++i) {
         int result;
         system("./drop_cache.sh");
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
         elapsed_time = diff_in_second(start, end);
         total_time += elapsed_time;
-        if(first){
+        if(first) {
             printf("Max = %d\n",result);
             first = 0;
         }
