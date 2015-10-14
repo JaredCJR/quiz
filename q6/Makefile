@@ -19,7 +19,7 @@ run:$(EXEC)
 	@echo RUN Iterative Version:
 	@./iterative
 	@echo --------------Iterative Version End-----------------
-	@echo --------------Iterative Version Start---------------
+	@echo --------------Recursive Version Start---------------
 	@echo RUN Recursive Version:
 	@./recursive
 	@echo --------------Recursive Version End-----------------
