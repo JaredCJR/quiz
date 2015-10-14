@@ -1,6 +1,27 @@
-/* FIXME: Implement! */
+#include "BinaryTree.h"
+#include <stddef.h>
 
-int main()
+struct TreeNode *_flatten(struct TreeNode * node)
 {
-    return 0;
+    if (node == NULL) {
+        return NULL;
+    }
+    if (node->right) {
+        node->right = _flatten(node->right);
+    }
+    if (node->left) {
+        struct TreeNode *tmp = node->right;
+        node->right = _flatten(node->left);
+        struct TreeNode *t = node->right;
+        while (t->right) {
+            t = t->right;
+        }
+        t->right = tmp;
+        node->left = NULL;
+    }
+    return node;
+}
+void flatten(struct TreeNode* node)
+{
+    _flatten(node);
 }
